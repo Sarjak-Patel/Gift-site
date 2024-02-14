@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&display=swap');
+    * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+    .container {
+        background: url(img/gift-img6.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+    }
+    /*header strats*/
+    header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 5;
+        padding: 0 15px;
+    }
+    header .logo img {
+        height: 80px;
+    }
+    header nav .dropdown {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        letter-spacing: 1px;
+        position: relative;
+        display: inline-block;
+        transition: all 1s linear;
+    }
+    header nav .dropdown:hover {
+        color: greenyellow;
+    }
+    header nav .dropdown a{
+        text-decoration: none;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    header nav .dropdown-list{
+        display: none;
+        position: absolute;
+        background-color: black;
+        width: 100vh;
+        height: 40vh;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        margin: 2px 0px 0px -100px;
+    }
+    header nav .dropdown:hover .dropdown-list {
+        display: block;
+        color: white;
+    }
+    header nav .dropdown .dropdown-list ul li{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        font-weight: 600;
+        padding: 5px;
+    }
+    header nav a i {
+        color: white;
+        padding: 0 10px;
+        transition: all 1s linear;
+    }
+    header nav a i:hover {
+        transform: scale(112%);
+        color: greenyellow;
+        -webkit-box-reflect: below 5px linear-gradient(to top, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.7));
+    }
+    .home-types {
+        background-color:#1b1721;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0.5px 0 0px 0 ;
+    }
+    .home-types .first-g{
+        width: 35%;
+        height: 290px;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+    }
+    .home-types .first-g .data {
+        position: absolute;
+        left: 0%;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        transition: all 1s linear;
+    }
+    .home-types .first-g:hover .data {
+        background: rgba(0, 0, 0, 0.4);
+        -webkit-text-stroke: 1px white;
+    }
+    .home-types .first-g .data h2 {
+        font-size: 5vw;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: transparent;
+    }
+    .home-types .first-g img {
+        width: 100%;
+        height: inherit;
+    }
+    .prodcut {
+        margin-top: 1px;
+        padding: 5% 0%;
+        background: linear-gradient(#1b1721, #130413);
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .prodcut .pro-bx {
+        margin-top: 20px;
+        width: 32%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        background: #1b1721;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .prodcut .pro-bx .pro-lf {
+        width: 40%;
+    }
+    .prodcut .pro-bx .pro-lf img {
+        width: 100%;
+        height: inherit;
+        opacity: 50%;
+        transition: all 1s linear;
+    }
+    .prodcut .pro-bx:hover img {
+        opacity: 100%;
+    }
+    .prodcut .pro-bx .pro-rt {
+        width: 60%;
+        padding: 10px;
+    }
+    .prodcut .pro-bx .pro-rt h2 {
+        font-size: 20px;
+        font-family: 'Orbitron', sans-serif;
+        text-transform: uppercase;
+    }
+    ::selection {
+        background: #000;
+        color: lightgray;
+    }
+    .prodcut .pro-bx .pro-rt p {
+        margin: 25px 0px;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .prodcut .pro-bx .pro-rt a {
+        padding: 8px 20px;
+        background: linear-gradient(to right bottom, #1b1721, #130413);
+        text-decoration: none;
+        color: white;
+        text-transform: capitalize;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: linear-gradient(to right bottom, #1b1721, #130413);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(225deg, #c8c8c8, #eeeeee00);
+        box-shadow: -7px 7px 9px #595959 inset,
+            7px -7px 100px #ffffff;
+        border-radius: 10px;
+    }
+    @media screen and (max-width:1024px) {
+        .prodcut .pro-bx {
+            width: 48%;
+        }
+    }
+    @media screen and (max-width:780px) {
+        .prodcut .pro-bx {
+            flex-direction: column;
+            width: 95%;
+        }
+        .prodcut .pro-bx .pro-rt {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    /* header ends*/
+    /*Footer Starts*/
+    footer {
+        margin: 0.5px 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #1b191b;
+        padding: 10px 0;
+    }
+    footer a {
+        text-decoration: none;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    footer .ft-left {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    footer .ft-left a i {
+        padding-left: 10px;
+    }
+    /*Footer Ends*/
+    /*Home-Page Strts*/
+    .home {
+        position: relative;
+    }
+    .home .main {
+        width: fit-content;
+        position: absolute;
+        top: 250px;
+        right: 5%;
+        margin: 0 auto;
+    }
+    .home .main h1 {
+        background: linear-gradient(230deg, #662D8C, #ED1E79, #FF512F, #DD2476);
+        background-clip: text;
+        color: transparent;
+        -webkit-background-clip: text;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 50px;
+        letter-spacing: 1.5px;
+        text-align: center;
+        margin: 0 0 50px 0;
+        text-transform: uppercase;
+        transition: all 1s linear;
+        -webkit-box-reflect: below -40px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5));
+    }
+    .home .main h1:hover {
+        letter-spacing: 4px;
+    }
+    .home .main a {
+        font-size: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        color: white;
+        position: absolute;
+        right: 5%;
+        top: 70%;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden;
+        padding: 3px 0px;
+        transition: all 1s linear;
+    }
+    .home .main a:hover {
+        transform: scale(107%);
+        -webkit-text-stroke: 0.5px white;
+        color: transparent;
+    }
+    .home .main a::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: red;
+        left: -100%;
+        top: 2%;
+        transition: all 1s linear;
+    }
+    .home a:hover::before {
+        left: 30%;
+    }
+    .home a::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: red;
+        right: -100%;
+        bottom: 2%;
+        transition: all 1s linear;
+    }
+    .home a:hover::after {
+        right: 30%;
+    }
+</style>
+<body>
+    <div class="container">
+        <!--Header Starts-->
+        <header>
+            <div class="logo">
+                <a href="Home.html"><img src="img/logo.png" alt=""></a>
+            </div>
+            <nav>
+                <div class="dropdown">
+                    <a href="products.html">
+                        <span>Product</span>
+                    </a>
+                    <div class="dropdown-list">
+                            <ul type="none">
+                                <a href="artificial.html">
+                                    <li>Artificial Product</li>
+                                </a>
+                                <li>Personalize Products</li>
+                            </ul>
+                    </div>
+                </div>
+                <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="login-sample.html"><i class="fa-solid fa-power-off"></i></a>
+            </nav>
+        </header>
+        <!--Header Ends-->
+        <!--HomePage Starts-->
+        <div class="home">
+            <div class="main">
+                <h1 data-aos="fade-down">Welcome to Gift Shop</h1><br>
+                <a href="products.html" data-aos="flip-down">It's Shoping Time</a>
+            </div>
+        </div>
+    </div>
+    <div class="home-types">
+        <div class="first-g">
+            <img src="https://cdn.pixabay.com/photo/2021/08/20/22/05/flowers-6561379_1280.jpg" alt="">
+            <div class="data">
+                <h2>gift1</h2>
+            </div>
+        </div>
+        <div class="first-g">
+            <img src="https://cdn.pixabay.com/photo/2017/06/10/14/17/watering-2389940_1280.jpg" alt="">
+            <div class="data">
+                <h2>gift2</h2>
+            </div>
+        </div>
+    </div>
+    <div class="prodcut">
+        <div class="pro-bx">
+            <div class="pro-lf">
+                <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt12prodlp/products/p-radiant-gerbera-and-roses-bouquet-240786-m.jpg"
+                    alt="">
+            </div>
+            <div class="pro-rt">
+                <h2>Radiant Gerbera And Roses</h2>
+                <p>
+                    Embrace the enchantment of floral elegance. This stunning bouquet features a gorgeous assortment
+                    of exotic white gerberas and roses hand-selected and arranged by our expert florists.
+                </p>
+                <a href="">read more </a>
+            </div>
+        </div>
+        <div class="pro-bx">
+            <div class="pro-lf">
+                <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt12prodlp/products/p-radiant-gerbera-and-roses-bouquet-240786-m.jpg"
+                    alt="">
+            </div>
+            <div class="pro-rt">
+                <h2>Radiant Gerbera And Roses</h2>
+                <p>
+                    Embrace the enchantment of floral elegance. This stunning bouquet features a gorgeous assortment
+                    of exotic white gerberas and roses hand-selected and arranged by our expert florists.
+                </p>
+                <a href="">read more </a>
+            </div>
+        </div>
+        <div class="pro-bx">
+            <div class="pro-lf">
+                <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt12prodlp/products/p-radiant-gerbera-and-roses-bouquet-240786-m.jpg"
+                    alt="">
+            </div>
+            <div class="pro-rt">
+                <h2>Radiant Gerbera And Roses</h2>
+                <p>
+                    Embrace the enchantment of floral elegance. This stunning bouquet features a gorgeous assortment
+                    of exotic white gerberas and roses hand-selected and arranged by our expert florists.
+                </p>
+                <a href="">read more </a>
+            </div>
+        </div>
+        <div class="pro-bx">
+            <div class="pro-lf">
+                <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt12prodlp/products/p-radiant-gerbera-and-roses-bouquet-240786-m.jpg"
+                    alt="">
+            </div>
+            <div class="pro-rt">
+                <h2>Radiant Gerbera And Roses</h2>
+                <p>
+                    Embrace the enchantment of floral elegance. This stunning bouquet features a gorgeous assortment
+                    of exotic white gerberas and roses hand-selected and arranged by our expert florists.
+                </p>
+                <a href="">read more </a>
+            </div>
+        </div>
+        <div class="pro-bx">
+            <div class="pro-lf">
+                <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt12prodlp/products/p-radiant-gerbera-and-roses-bouquet-240786-m.jpg"
+                    alt="">
+            </div>
+            <div class="pro-rt">
+                <h2>Radiant Gerbera And Roses</h2>
+                <p>
+                    Embrace the enchantment of floral elegance. This stunning bouquet features a gorgeous assortment
+                    of exotic white gerberas and roses hand-selected and arranged by our expert florists.
+                </p>
+                <a href="">read more </a>
+            </div>
+        </div>
+        <div class="pro-bx">
+            <div class="pro-lf">
+                <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt12prodlp/products/p-radiant-gerbera-and-roses-bouquet-240786-m.jpg"
+                    alt="">
+            </div>
+            <div class="pro-rt">
+                <h2>Radiant Gerbera And Roses</h2>
+                <p>
+                    Embrace the enchantment of floral elegance. This stunning bouquet features a gorgeous assortment
+                    of exotic white gerberas and roses hand-selected and arranged by our expert florists.
+                </p>
+                <a href="">read more </a>
+            </div>
+        </div>
+    </div>
+    <!--HomePage Ends-->
+    <!--Footer Starts-->
+    <footer>
+        <div class="ft-left">
+            <a href="">E-mail<i class="fa-solid fa-envelope"></i></a>
+            <a href="">Instagram<i class="fa-brands fa-square-instagram"></i></a>
+            <a href="">Meta<i class="fa-brands fa-meta"></i></a>
+            <a href="">About Us</a>
+            <a href="">FAQs</a>
+        </div>
+    </footer>
+    <!--Footer Ends-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .cart {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, #000000, #2D3436);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .cart .box {
+            background-color: #18191a;
+            box-shadow: 0 0 3px 0px whitesmoke;
+            border-radius: 10px;
+            margin: 30px 50px 0 50px;
+            width: 55%;
+            height: 35vh;
+            display: flex;
+        }
+
+        .cart .box .prd-img {
+            height: 30vh;
+            width: 20%;
+            margin: 15px;
+        }
+
+        .cart .box .prd-img img {
+            width: 100%;
+            height: inherit;
+            border-radius: 5%;
+        }
+
+        .cart .box .cart-cnt{
+            width: 78%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cart .box .cart-cnt a {
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 27px;
+            text-align: justify;
+            margin: 20px 0 0 20px;
+        }
+        .cart .box .cart-cnt p {
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            text-align: justify;
+            margin-top: 15px;
+            padding: 0 20px;
+        }
+        .cart .box i{
+            margin-right: 10px;
+            color: white;
+            font-size: 30px;
+            text-decoration: none;
+        }
+        .pc-box{
+            position: absolute;
+            top: 100px;
+            right: 100px;
+            background-color:#18191a;
+            padding-left: 10px ;
+            height:65vh;
+            width: 25%;
+            border-radius: 5%;
+            box-shadow: 0 0 3px 0 white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: justify;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cart">
+        <div class="box">
+            <div class="prd-img">
+                <img src="https://www.fnp.com/images/pr/l/v20230404111928/wild-heart-plant_1.jpg" alt="Image">
+            </div>
+            <div class="cart-cnt">
+                <a href="">
+                    <h4>product name</h4>
+                </a>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis provident architecto maiores quis aliquam
+                    dicta doloribus non fuga dolorem debitis.
+                </p>
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="box">
+            <div class="prd-img">
+                <img src="https://www.fnp.com/images/pr/l/v20230404111928/wild-heart-plant_1.jpg" alt="Image">
+            </div>
+            <div class="cart-cnt">
+                <a href="">
+                    <h4>product name</h4>
+                </a>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis provident architecto maiores quis aliquam
+                    dicta doloribus non fuga dolorem debitis.
+                </p>
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+    <div class="pc-box">
+        <h2>first product <br> price Rs.5000 </h2>
+        <h2>second product <br> price Rs.5000 </h2>
+        <h3>Apply the coupan</h3>
+        <h3>Dilvery charge Rs.500</h3>
+        <h3>total Rs.10000</h3>
+    </div>
+</body>
+
+</html>
